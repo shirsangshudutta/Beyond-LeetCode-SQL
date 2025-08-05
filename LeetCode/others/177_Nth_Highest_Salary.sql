@@ -9,6 +9,6 @@ END
 SELECT * /*This is the outer query part */
 FROM Employee Emp1
 WHERE (N-1) = ( /* Subquery starts here */
-  SELECT COUNT(DISTINCTEmp2.Salary)
+  SELECT COUNT(DISTINCT Emp2.Salary)
   FROM Employee Emp2
   WHERE Emp2.Salary > Emp1.Salary)
