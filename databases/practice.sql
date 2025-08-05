@@ -455,7 +455,7 @@ DROP TABLE IF EXISTS `Printer`;
 CREATE TABLE `Printer` (
   `company_name` varchar(9) DEFAULT NULL,
   `action` varchar(5) DEFAULT NULL,
-  `pagecount` varchar(5) DEFAULT NULL
+  `pagecount` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -463,14 +463,14 @@ CREATE TABLE `Printer` (
 --
 
 INSERT INTO `Printer` (`company_name`, `action`, `pagecount`) VALUES
-('Company A', 'PRINT', '3'),
-('Company A', 'PRINT', '2'),
-('Company A', 'PRINT', '3'),
+('Company A', 'PRINT', 3),
+('Company A', 'PRINT', 2),
+('Company A', 'PRINT', 3),
 ('Company B', 'EMAIL', NULL),
-('Company B', 'PRINT', '2'),
-('Company B', 'PRINT', '2'),
-('Company B', 'PRINT', '1'),
-('Company A', 'PRINT', '3');
+('Company B', 'PRINT', 2),
+('Company B', 'PRINT', 2),
+('Company B', 'PRINT', 1),
+('Company A', 'PRINT', 3);
 
 -- --------------------------------------------------------
 

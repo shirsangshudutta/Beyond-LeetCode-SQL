@@ -85,9 +85,11 @@ SELECT
   bp.product_id
   ,lb.latest
   ,bp.bug_id
-FROM BugsProducts bp JOIN latest_bug lb
-  ON bp.product_id = lb.product_id; -- product_id is unique in tmp table, not unique in left table
-    AND lb.date_reported = lb.latest;  -- without this predicate, latest will be matched to all rows on left with same product id
+FROM BugsProducts bp 
+  JOIN Bugs b ON bp.bug_id = b.bug_id
+  JOIN latest_bug lb
+    ON bp.product_id = lb.product_id -- product_id is unique in tmp table, not unique in left table
+    AND b.date_reported = lb.latest;  -- without this predicate, latest will be matched to all rows on left with same product id
 
 DROP VIEW;
 
